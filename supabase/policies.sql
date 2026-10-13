@@ -140,6 +140,4 @@ grant usage on schema public to anon, authenticated;
 grant select on all tables in schema public to anon, authenticated;
 grant insert, update, delete on table public.profiles to authenticated;
 grant insert, update, delete on table public.player_inventory,public.player_equipment,public.player_skills,public.player_stage_progress to authenticated;
-grant all on all tables in schema public to authenticated where public.is_admin()? -- not needed; policies control
--- simpler: just rely on policies; grants minimal
 grant usage, select on all sequences in schema public to authenticated;
