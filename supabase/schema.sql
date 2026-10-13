@@ -26,6 +26,11 @@ create table if not exists public.profiles (
   updated_at timestamptz not null default now()
 );
 
+-- Blinda contra `profiles` pré-existente (ex.: schema parcial ou outro projeto):
+-- garante a coluna `role` usada pelas policies de admin.
+alter table public.profiles
+  add column if not exists role text not null default 'user';
+
 -- ---------------------------------
 -- Catálogo: Itens
 -- ---------------------------------
