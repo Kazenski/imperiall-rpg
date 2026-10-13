@@ -40,6 +40,9 @@ create policy "tmp_anon_read_profiles" on public.profiles for select to anon usi
 drop policy if exists "tmp_anon_read_punish" on public.player_punishments;
 create policy "tmp_anon_read_punish" on public.player_punishments for select to anon using (true);
 
+drop policy if exists "tmp_anon_read_audit" on public.admin_audit_log;
+create policy "tmp_anon_read_audit" on public.admin_audit_log for select to anon using (true);
+
 -- Escrita anônima (cadastro via admin sem login)
 drop policy if exists "tmp_anon_write_items" on public.items;
 create policy "tmp_anon_write_items" on public.items for all to anon, authenticated using (true) with check (true);

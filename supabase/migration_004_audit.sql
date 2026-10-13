@@ -34,6 +34,11 @@ create policy "audit_admin_all"
 grant select on table public.admin_audit_log to authenticated;
 grant usage, select on all sequences in schema public to authenticated;
 
+-- Reforça leitura anônima em tudo criado até aqui (os grants antigos não
+-- cobrem tabelas criadas depois deles; o RLS continua mandando).
+grant usage on schema public to anon, authenticated;
+grant select on all tables in schema public to anon, authenticated;
+
 create or replace function public.log_admin_audit()
 returns trigger
 language plpgsql
