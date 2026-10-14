@@ -9,6 +9,7 @@
 5. `migration_004_audit.sql` - Log de auditoria do admin
 6. `migration_005_player_character.sql` - Herói escolhido pelo jogador
 7. `storage.sql` - Bucket `assets` + policies (admin pode upload)
+8. `seed_example_content.sql` - **(opcional)** ondas + loot de exemplo nas fases, só para o app ter o que mostrar
 
 Todos são **idempotentes**.
 
