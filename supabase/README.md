@@ -4,7 +4,11 @@
 
 1. `schema.sql` - Tabelas, triggers, funções
 2. `policies.sql` - RLS + policies
-3. `storage.sql` - Bucket `assets` + policies (admin pode upload)
+3. `migration_002_punishments.sql` - Moderação (mute/ban)
+4. `migration_003_content.sql` - NPCs, história, efeitos, heróis, profissões, craft
+5. `migration_004_audit.sql` - Log de auditoria do admin
+6. `migration_005_player_character.sql` - Herói escolhido pelo jogador
+7. `storage.sql` - Bucket `assets` + policies (admin pode upload)
 
 Todos são **idempotentes**.
 
